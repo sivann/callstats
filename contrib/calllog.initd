@@ -1,0 +1,61 @@
+#!/bin/bash
+#
+#	/etc/rc.d/init.d/calllog
+#
+# Starts the calllog daemon
+# sivann 6/5/2008
+#
+# processname: calllog
+# Source function library.
+# chkconfig: 2345 99 01
+# description: calllog
+. /etc/init.d/functions
+
+
+RETVAL=0
+progname="Siemens phone call logger"
+progpath=/usr/local/sbin/
+#prog=calllog.sh
+prog="netlog 24274 /var/log/call.log"
+progfull=${progpath}${prog}
+
+start() {
+        echo -n $"Starting $progfull: "
+	daemon $progfull
+	RETVAL=$?
+	[ $RETVAL -eq 0 ] && touch /var/lock/subsys/calllog
+	echo
+}
+
+stop() {
+	echo -n $"Stopping $progname: "
+	killproc $prog
+	RETVAL=$?
+	[ $RETVAL -eq 0 ] && rm -f /var/lock/subsys/calllog
+	echo
+}
+
+#
+#	See how we were called.
+#
+case "$1" in
+  start)
+	start
+	;;
+  stop)
+	stop
+	;;
+  reload|restart)
+	stop
+	start
+	RETVAL=$?
+	;;
+  status)
+	status $prog
+	;;
+  *)
+	echo $"Usage: $0 {start|stop|status}"
+	exit 1
+esac
+
+exit $RETVAL

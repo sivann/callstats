@@ -1,0 +1,114 @@
+@media print {
+  body {
+    margin:0px;
+    padding:0px;
+  }
+}
+
+@media screen {
+  body {
+    font-family: Arial;
+    font-size: 10pt;
+    background-color:white;
+
+  }
+}
+
+.tablecontainer {
+  float: left;	
+  height: 200px;
+  width:250px; /*min-width doesn't include scrollbars in IE.. */
+  margin: 5px;
+  padding: 5px;
+  overflow: auto; overflow-y: auto; overflow-x: hidden;
+  text-align: center;
+  background-color: #F9F9F9;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #888;
+  border-bottom: 1px solid #888;
+}
+
+option, select{
+  font-size:8pt;
+}
+.graphcontainer {	
+  float: left;	
+  height: 530px;
+  width: 1075px; 
+  margin: 5px;
+  margin-bottom:0px;
+  padding: 0px;
+  overflow: auto; overflow-y: hidden; overflow-x: hidden;
+  /*border:1px solid black;*/
+  text-align: center;
+  background-color: #fff;
+}
+
+.graphcontainer2 {	
+  float: left;	
+  height: 200px;
+  width: 250px;
+  margin: 5px;
+  margin-bottom:0px;
+  padding: 0px;
+  overflow: auto; overflow-y: hidden; overflow-x: hidden;
+  text-align: center;
+  background-color: #fff;
+}
+
+
+
+
+
+.msg{
+  width:100px;
+  position:absolute;
+  top:0;
+  right:0;
+  line-height:100%;
+  background-color:#FFE0E0;
+  border:1px dashed red;
+
+  color:black;
+  font-size:8pt;
+}
+.msg p {
+  margin:0px;
+  padding:1% 2%;
+
+}
+
+table.tbl1 {
+  width:100%;
+  border-collapse:collapse;
+  border-width: 1px;
+  border-color:blue;
+}
+
+table.tbl1 td,th{
+  border-style: solid;
+  border-width: 1px;
+  text-align:center;
+}
+
+table.tbl1 caption {
+  font-weight:bold;
+  color: #303030;
+  margin-bottom:5px;
+  caption-side:top;
+}
+
+table.tblfrm td {
+  vertical-align: middle;
+}
+
+.big {
+  font-size:14pt;
+  font-weight:bold;
+}
+
+#header {
+  float:left;
+  clear:both;
+}

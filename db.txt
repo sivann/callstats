@@ -1,0 +1,17 @@
+CREATE TABLE calls (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+datetime INTEGER, 
+trunk text,
+stationno text,
+duration_incoming_sec INTEGER,
+duration_sec INTEGER, 
+phone_number text,
+charge_pulse,
+info,
+account_code,
+msn,
+lcr_access_code,
+lcr_route);
+
+create index phone_number_idx on calls(phone_number);
+create index stationno_idx on calls(stationno);  
